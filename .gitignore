@@ -1,0 +1,78 @@
+# =========================
+# Xcode
+# =========================
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode user data
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Workspace user settings
+*.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
+
+# SwiftPM
+.build/
+Package.resolved
+Packages/
+.swiftpm/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+Carthage/Checkouts/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/
+fastlane/test_output/
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Environment / secrets
+.env
+.env.*
+BlossomMovie/APIConfig.json
+
+# Firebase / Google
+GoogleService-Info.plist
+
+# Temporary
+*.tmp
+*.swp
+*~.nib
+
+# Archives
+*.xcarchive
+
+# Test artifacts
+*.xccovreport
+*.xccovarchive
+
+# SwiftLint
+.swiftlint.yml
+.swiftlint.yml.lock
+
+# Danger
+danger-output.md
+
+# Local config
+Config/Local.xcconfig
+

@@ -46,35 +46,37 @@ struct DataFetcher {
         }
         
         urlComponents.queryItems = [
+            URLQueryItem(name: "part", value: "id"),
             URLQueryItem(name: YoutubeURLStrings.queryShorten.rawValue, value: trailerSearch),
-            URLQueryItem(name: YoutubeURLStrings.key.rawValue, value: searchAPIKey)
+            URLQueryItem(name: YoutubeURLStrings.key.rawValue, value: searchAPIKey),
+            URLQueryItem(name: "type", value: "video")
         ]
         
         guard let fetchVideoURL = urlComponents.url else {
             throw NetworkError.urlBuildFailed
         }
         
-        print(fetchVideoURL)
-        
-        return try await fetchAndDecode(url: fetchVideoURL, type: YoutubeSearchResponse.self).items?.first?.id?.videoId ?? ""
+        return try await fetchAndDecode(url: fetchVideoURL, type: YoutubeSearchResponse.self, convertFromSnakeCase: false).items?.first?.id?.videoId ?? ""
     }
     
     
-    func fetchAndDecode<T: Decodable>(url: URL, type: T.Type) async throws -> T {
-        
+    func fetchAndDecode<T: Decodable>(url: URL, type: T.Type, convertFromSnakeCase: Bool = true) async throws -> T {
+
         let (data, urlResponse) = try await URLSession.shared.data(from: url)
-        
+
         guard let response = urlResponse as? HTTPURLResponse, response.statusCode == 200 else {
             throw NetworkError.badURLResponse(underlyingError: NSError(
                 domain: "DataFetcher",
                 code: (urlResponse as? HTTPURLResponse)?.statusCode ?? -1,
                 userInfo: [NSLocalizedDescriptionKey: "Invalid HTTP Response"]) )
         }
-        
+
         let decoder = JSONDecoder()
-        
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        
+
+        if convertFromSnakeCase {
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+        }
+
         return try decoder.decode(type, from: data)
     }
     
