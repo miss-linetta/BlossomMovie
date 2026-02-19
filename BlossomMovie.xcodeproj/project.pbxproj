@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		84943A752F4721040057E1F3 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 84943A742F4721040057E1F3 /* .gitignore */; };
+		84943B2F2F4731D60057E1F3 /* README 2.md in Resources */ = {isa = PBXBuildFile; fileRef = 84943B102F4731D60057E1F3 /* README 2.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		841F11E82F16A72D0076F55A /* BlossomMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlossomMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84943A742F4721040057E1F3 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		84943B102F4731D60057E1F3 /* README 2.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "README 2.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -37,6 +39,7 @@
 		841F11DF2F16A72D0076F55A = {
 			isa = PBXGroup;
 			children = (
+				84943B102F4731D60057E1F3 /* README 2.md */,
 				84943A742F4721040057E1F3 /* .gitignore */,
 				841F11EA2F16A72D0076F55A /* BlossomMovie */,
 				841F11E92F16A72D0076F55A /* Products */,
@@ -115,6 +118,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84943B2F2F4731D60057E1F3 /* README 2.md in Resources */,
 				84943A752F4721040057E1F3 /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
